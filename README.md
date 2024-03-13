@@ -443,7 +443,7 @@ console.log(party2.throwParty()); // prints "Welcome to the party Lucy"
 
 Implement the following in the __problems/11-bind-set-timeout.js__ file.
 
-Write a function named `boundFuncTimer(obj, func, delay)` that will accept am
+Write a function named `boundFuncTimer(obj, func, delay)` that will accept an
 object `obj`, a function `func`, and `delay` which is a number representing
 milliseconds. The `boundFuncTimer` should invoke the function `func` with `obj`
 as its context after a `delay`.
