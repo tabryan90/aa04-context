@@ -1,19 +1,24 @@
 function bindToAnArg(func, arg) {
-  const boundFunc = func.bind(arg);
-  return boundFunc();
+  return func.bind(null, arg);
 }
 
-function iSpy(thing) {
-  return "I spy a " + thing;
+function add(num1, num2) {
+  return num1 + num2;
 }
 
-let spyTree = bindToAnArg(iSpy, "tree");
-console.log(spyTree());        // => I spy a tree
-console.log(spyTree("car"));   // => I spy a tree
+const addTwo = bindToAnArg(add, 2);
+const addThree = bindToAnArg(add, 3);
 
-let spyCar = bindToAnArg(iSpy, "car");
-console.log(spyCar());         // => I spy a car
-console.log(spyCar("potato")); // => I spy a car
+const twoPlusSix = addTwo(6);
+const twoPlusSeven = addTwo(7);
+const threePlusSeven = addThree(7);
+const threePlusEight = addThree(8);
+console.log({
+  twoPlusSix,     // => 8
+  twoPlusSeven,   // => 9
+  threePlusSeven, // => 10
+  threePlusEight  // => 11
+});
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = bindToAnArg;
